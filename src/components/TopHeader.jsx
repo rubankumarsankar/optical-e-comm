@@ -21,7 +21,7 @@ const TopHeader = () => {
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     localStorage.removeItem("user");
-    navigate("/admin");
+    navigate("/");
   };
 
   const handleProfile = () => {
