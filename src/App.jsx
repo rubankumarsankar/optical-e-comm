@@ -11,6 +11,7 @@ import CartPage from './pages/CartPage';
 import WishlistPage from './pages/WishlistPage';
 import { Toaster } from "react-hot-toast";
 import CheckoutPage from './pages/CheckoutPage';
+import MyOrdersPage from './pages/MyOrdersPage';
 
 // import AdminDashboard from './pages/admin/AdminDashboard';
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/wishlist" element={<WishlistPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/my-orders" element={<MyOrdersPage />} />
           
           {/* Add more public routes here */}
         </Route>

@@ -91,7 +91,7 @@ export default function Navbar() {
                   onClick={() => setDropdownOpen(!isDropdownOpen)}
                 />
                 {isDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-40 bg-white border shadow-md rounded-md py-2 z-50">
+                  <div className="absolute right-0 mt-2 w-44 bg-white border shadow-md rounded-md py-2 z-50">
                     {!isLoggedIn ? (
                       <>
                         <a
@@ -108,13 +108,21 @@ export default function Navbar() {
                         </a>
                       </>
                     ) : (
-                      <a
-                        href="#"
-                        onClick={handleLogout}
-                        className="block px-4 py-2 hover:bg-gray-100 text-sm text-red-500"
-                      >
-                        Logout
-                      </a>
+                      <>
+                        <a
+                          href="/my-orders"
+                          className="block px-4 py-2 hover:bg-gray-100 text-sm"
+                        >
+                          My Orders
+                        </a>
+                        <a
+                          href="#"
+                          onClick={handleLogout}
+                          className="block px-4 py-2 hover:bg-gray-100 text-sm text-red-500"
+                        >
+                          Logout
+                        </a>
+                      </>
                     )}
                   </div>
                 )}

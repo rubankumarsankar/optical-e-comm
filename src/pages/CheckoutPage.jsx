@@ -35,16 +35,29 @@ export default function CheckoutPage() {
 
   const handleCheckout = () => {
     const { name, email, phone, address, zip, paymentMethod } = form;
-
     if (!name || !email || !phone || !address || !zip || !paymentMethod) {
       toast.error("Please fill in all fields and select a payment method.");
       return;
     }
 
-    // Simulate successful checkout
+    // Save the order to localStorage
+    const newOrder = {
+      id: Date.now(),
+      customer: form,
+      items: cartItems,
+      total,
+      paymentMethod,
+      createdAt: new Date().toISOString(),
+    };
+
+    const existingOrders = JSON.parse(localStorage.getItem("optic_orders") || "[]");
+    existingOrders.push(newOrder);
+    localStorage.setItem("optic_orders", JSON.stringify(existingOrders));
+
+    // Clear cart and redirect
     localStorage.removeItem("optic_cart");
-    toast.success(`Order placed successfully via ${paymentMethod.toUpperCase()}!`);
-    navigate("/");
+    toast.success("Order placed successfully!");
+    navigate("/my-orders");
   };
 
   return (
@@ -64,7 +77,7 @@ export default function CheckoutPage() {
               placeholder="Full Name"
               value={form.name}
               onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-gray-300 rounded-lg"
             />
             <input
               type="email"
@@ -72,7 +85,7 @@ export default function CheckoutPage() {
               placeholder="Email Address"
               value={form.email}
               onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-gray-300 rounded-lg"
             />
             <input
               type="tel"
@@ -80,7 +93,7 @@ export default function CheckoutPage() {
               placeholder="Phone Number"
               value={form.phone}
               onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-gray-300 rounded-lg"
             />
             <textarea
               name="address"
@@ -88,7 +101,7 @@ export default function CheckoutPage() {
               rows="3"
               value={form.address}
               onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-gray-300 rounded-lg"
             />
             <input
               type="text"
@@ -96,47 +109,26 @@ export default function CheckoutPage() {
               placeholder="Zip Code"
               value={form.zip}
               onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-gray-300 rounded-lg"
             />
-
             <div>
               <label className="font-semibold text-gray-700 mb-2 block">
                 Payment Method
               </label>
               <div className="space-y-3">
-                <label className="flex items-center gap-3">
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value="cod"
-                    checked={form.paymentMethod === "cod"}
-                    onChange={handleChange}
-                    className="accent-blue-600"
-                  />
-                  <span>Cash on Delivery (COD)</span>
-                </label>
-                <label className="flex items-center gap-3">
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value="upi"
-                    checked={form.paymentMethod === "upi"}
-                    onChange={handleChange}
-                    className="accent-blue-600"
-                  />
-                  <span>UPI</span>
-                </label>
-                <label className="flex items-center gap-3">
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value="card"
-                    checked={form.paymentMethod === "card"}
-                    onChange={handleChange}
-                    className="accent-blue-600"
-                  />
-                  <span>Credit/Debit Card</span>
-                </label>
+                {["cod", "upi", "card"].map((method) => (
+                  <label key={method} className="flex items-center gap-3">
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      value={method}
+                      checked={form.paymentMethod === method}
+                      onChange={handleChange}
+                      className="accent-blue-600"
+                    />
+                    <span className="capitalize">{method}</span>
+                  </label>
+                ))}
               </div>
             </div>
           </form>
@@ -149,16 +141,12 @@ export default function CheckoutPage() {
           animate={{ opacity: 1, x: 0 }}
         >
           <h2 className="text-3xl font-bold mb-6 text-gray-800">Order Summary</h2>
-
           {cartItems.length === 0 ? (
             <p className="text-gray-500">No items in cart.</p>
           ) : (
             <div className="space-y-5">
               {cartItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex justify-between items-start border-b pb-3"
-                >
+                <div key={item.id} className="flex justify-between items-start border-b pb-3">
                   <div>
                     <p className="font-semibold">{item.title}</p>
                     <p className="text-sm text-gray-500">Qty: {item.qty || 1}</p>
