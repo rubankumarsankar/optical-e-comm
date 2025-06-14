@@ -22,7 +22,10 @@ const ProductDetail = () => {
     }
   }, [id]);
 
-  if (!product) return <div className="text-center py-20 text-gray-600">Loading...</div>;
+  if (!product)
+    return (
+      <div className="text-center py-20 text-gray-600">Loading...</div>
+    );
 
   const addToCart = () => {
     const cart = JSON.parse(localStorage.getItem("optic_cart") || "[]");
@@ -67,7 +70,17 @@ const ProductDetail = () => {
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Image Section */}
         <div className="flex-1">
-          <div className="w-full border rounded-lg overflow-hidden">
+          <div className="w-full border rounded-lg overflow-hidden relative">
+            {product.discount && (
+              <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
+                {product.discount} OFF
+              </span>
+            )}
+            {product.tag && (
+              <span className="absolute top-2 right-2 bg-green-600 text-white text-xs px-2 py-1 rounded">
+                {product.tag}
+              </span>
+            )}
             <img
               src={selectedImage}
               alt="Main"
@@ -98,12 +111,14 @@ const ProductDetail = () => {
           <div className="text-yellow-500 font-medium">
             ⭐ {product.rating} reviews
           </div>
-          <div className="text-2xl font-bold text-gray-800">
-            ${product.price.toFixed(2)}
+          <div className="flex items-center gap-2">
+            <div className="text-2xl font-bold text-gray-800">
+              ₹{product.price.toFixed(2)}
+            </div>
+            <p className="text-gray-500 line-through">
+              ₹{product.originalPrice.toFixed(2)}
+            </p>
           </div>
-          <p className="text-gray-500 line-through">
-            ${product.originalPrice.toFixed(2)}
-          </p>
 
           <div className="flex flex-wrap items-center gap-4 mt-4">
             <button
@@ -127,8 +142,12 @@ const ProductDetail = () => {
           </div>
 
           <div className="mt-4 space-y-1 text-sm">
-            <p className="text-green-600">In Stock ({product.quantity} available)</p>
-            <p className="text-gray-700">Free shipping & 2-year warranty included</p>
+            <p className="text-green-600">
+              In Stock ({product.quantity} available)
+            </p>
+            <p className="text-gray-700">
+              Free shipping & 2-year warranty included
+            </p>
           </div>
         </div>
       </div>
@@ -154,7 +173,9 @@ const ProductDetail = () => {
 
         <div className="mt-6">
           {activeTab === "Description" && (
-            <p className="text-gray-700 text-sm leading-relaxed">{product.description}</p>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              {product.description}
+            </p>
           )}
 
           {activeTab === "Specifications" && (
@@ -162,25 +183,30 @@ const ProductDetail = () => {
               <div>
                 <h4 className="font-semibold mb-2">Frame Details</h4>
                 <ul className="space-y-1">
-                  <li><strong>Material:</strong> {product.specifications?.material}</li>
-                  <li><strong>Frame Shape:</strong> {product.frameType}</li>
-                  <li><strong>Frame Width:</strong> {product.specifications?.frameWidth || "138mm"}</li>
-                  <li><strong>Temple Length:</strong> {product.specifications?.templeLength || "145mm"}</li>
-                  <li><strong>Bridge Width:</strong> {product.specifications?.bridgeWidth || "20mm"}</li>
-                  <li><strong>Lens Height:</strong> {product.specifications?.lensHeight || "47mm"}</li>
-                  <li><strong>Lens Width:</strong> {product.specifications?.lensWidth || "50mm"}</li>
+                  <li>
+                    <strong>Material:</strong> {product.specifications?.material}
+                  </li>
+                  <li>
+                    <strong>Frame Shape:</strong> {product.frameType}
+                  </li>
+                  <li>
+                    <strong>Lens Type:</strong> {product.specifications?.lensType}
+                  </li>
+                  <li>
+                    <strong>Weight:</strong> {product.specifications?.weight}
+                  </li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold mb-2">Additional Information</h4>
                 <ul className="space-y-1">
-                  <li><strong>Gender:</strong> {product.specifications?.gender || "Unisex"}</li>
-                  <li><strong>Color:</strong> {product.specifications?.color || "Gold"}</li>
-                  <li><strong>Prescription Compatible:</strong> {product.specifications?.prescriptionCompatible ? "Yes" : "No"}</li>
-                  <li><strong>Adjustable Nose Pads:</strong> {product.specifications?.adjustableNosePads ? "Yes" : "No"}</li>
-                  <li><strong>Spring Hinges:</strong> {product.specifications?.springHinges ? "Yes" : "No"}</li>
-                  <li><strong>Case Included:</strong> {product.specifications?.caseIncluded ? "Yes" : "No"}</li>
-                  <li><strong>Warranty:</strong> {product.specifications?.warranty}</li>
+                  <li>
+                    <strong>Warranty:</strong> {product.specifications?.warranty}
+                  </li>
+                  <li>
+                    <strong>Color:</strong>{" "}
+                    {product.specifications?.color || "Not specified"}
+                  </li>
                 </ul>
               </div>
             </div>
@@ -215,8 +241,18 @@ const ProductDetail = () => {
               <Link
                 to={`/product/${suggestion.id}`}
                 key={suggestion.id}
-                className="border rounded-md p-2 hover:shadow-lg transition block"
+                className="border rounded-md p-2 hover:shadow-lg transition block relative"
               >
+                {suggestion.discount && (
+                  <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
+                    {suggestion.discount} OFF
+                  </span>
+                )}
+                {suggestion.tag && (
+                  <span className="absolute top-2 right-2 bg-green-600 text-white text-xs px-2 py-1 rounded">
+                    {suggestion.tag}
+                  </span>
+                )}
                 <img
                   src={suggestion.image}
                   alt={suggestion.title}
@@ -224,7 +260,9 @@ const ProductDetail = () => {
                 />
                 <h3 className="text-sm font-medium mt-2">{suggestion.title}</h3>
                 <p className="text-blue-600 text-sm">{suggestion.brand}</p>
-                <p className="text-gray-800 font-semibold">${suggestion.price.toFixed(2)}</p>
+                <p className="text-gray-800 font-semibold">
+                  ₹{suggestion.price.toFixed(2)}
+                </p>
               </Link>
             ))}
         </div>

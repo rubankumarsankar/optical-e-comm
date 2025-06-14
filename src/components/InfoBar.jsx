@@ -5,7 +5,7 @@ const infoItems = [
   {
     icon: <FaShippingFast size={28} />,
     title: "Free Shipping",
-    description: "On all orders over $99. International shipping available.",
+    description: "On all orders over ₹99. International shipping available.",
   },
   {
     icon: <FaHeadphones size={28} />,

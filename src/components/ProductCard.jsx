@@ -37,8 +37,26 @@ export default function ProductCard({ product }) {
       className="bg-white rounded-xl shadow hover:scale-[1.02] transition-all duration-300 relative"
       whileHover={{ boxShadow: "0 10px 20px rgba(0,0,0,0.1)" }}
     >
+      {/* Discount badge */}
+      {product.discount && (
+        <span className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded z-10">
+          {product.discount} OFF
+        </span>
+      )}
+
+      {/* Tag badge */}
+      {product.tag && (
+        <span className="absolute top-2 left-2 bg-green-600 text-white text-xs font-semibold px-2 py-1 rounded z-10">
+          {product.tag}
+        </span>
+      )}
+
       <Link to={`/product/${product.id}`}>
-        <img src={product.image} alt={product.title} className="rounded-t-xl w-full h-48 object-cover" />
+        <img
+          src={product.image}
+          alt={product.title}
+          className="rounded-t-xl w-full h-48 object-cover"
+        />
       </Link>
 
       <div className="p-4">
@@ -46,7 +64,13 @@ export default function ProductCard({ product }) {
           <h2 className="font-semibold text-gray-800 truncate hover:underline">{product.title}</h2>
         </Link>
         <p className="text-sm text-gray-500">{product.brand}</p>
-        <p className="text-lg font-bold text-blue-600 mt-1">₹{product.price.toFixed(2)}</p>
+
+        <div className="flex items-center gap-2 mt-1">
+          <p className="text-lg font-bold text-blue-600">₹{product.price.toFixed(2)}</p>
+          {product.originalPrice && product.originalPrice !== product.price && (
+            <p className="text-sm line-through text-gray-400">₹{product.originalPrice.toFixed(2)}</p>
+          )}
+        </div>
 
         <div className="flex flex-wrap items-center justify-between gap-2 mt-4">
           <motion.button

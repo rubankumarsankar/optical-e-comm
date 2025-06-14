@@ -63,7 +63,7 @@ const Register = () => {
         {/* Left image */}
         <div className="w-1/2 hidden md:block">
           <img
-            src="/glasses.png"
+            src="assets/glasses.jpg"
             alt="Frame"
             className="object-cover h-full w-full"
           />

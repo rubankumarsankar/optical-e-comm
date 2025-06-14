@@ -18,7 +18,7 @@ const categories = [
     title: "Contact Lenses",
     description: "Discover comfortable contact lenses for daily or extended wear.",
     image: "/assets/category/contact-lenses.jpg",
-    link: "/category/contact-lenses",
+    link: "/category/lenses",
   },
 ];
 

@@ -75,11 +75,11 @@ export default function Navbar() {
 
           <div className="flex gap-6 items-center text-sm text-gray-700">
             <div className="hidden md:flex gap-6">
-              <a href="/Eyeglasses">Eyeglasses</a>
-              <a href="#">Sunglasses</a>
-              <a href="#">Contact Lenses</a>
-              <a href="#">Brands</a>
-              <a href="#">Sale</a>
+              <a href="/category/eyeglasses">Eyeglasses</a>
+              <a href="/category/sunglasses">Sunglasses</a>
+              <a href="/category/lenses">Contact Lenses</a>
+              {/* <a href="#">Brands</a> */}
+              {/* <a href="#">Sale</a> */}
             </div>
 
             {/* Icons */}

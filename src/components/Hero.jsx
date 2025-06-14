@@ -1,7 +1,9 @@
+import PromoBanner from './PromoBanner';
 import HeroBg from '/assets/hero-bg.jpg';
 
 export default function Hero() {
   return (
+      <>
     <section
       className="relative h-[90vh] bg-cover bg-center text-white flex items-center justify-start px-8 md:px-24"
       style={{ backgroundImage: `url(${HeroBg})` }}
@@ -28,6 +30,10 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      
     </section>
+    <PromoBanner  />
+  
+    </>
   );
 }

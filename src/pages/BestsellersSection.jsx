@@ -72,10 +72,10 @@ export default function BestsellersSection() {
                 <p className="text-sm text-gray-500">{item.brand}</p>
                 <h3 className="text-base font-semibold">{item.name}</h3>
                 <div className="flex items-center gap-2 mt-1">
-                  <span className="text-blue-600 font-semibold">${item.price.toFixed(2)}</span>
+                  <span className="text-blue-600 font-semibold">₹{item.price.toFixed(2)}</span>
                   {item.originalPrice && (
                     <span className="line-through text-sm text-gray-400">
-                      ${item.originalPrice.toFixed(2)}
+                      ₹{item.originalPrice.toFixed(2)}
                     </span>
                   )}
                 </div>
@@ -92,7 +92,7 @@ export default function BestsellersSection() {
         {/* View All Button */}
         <div className="text-center mt-10">
           <a
-            href="/bestsellers"
+            href="/category"
             className="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
           >
             View All Bestsellers

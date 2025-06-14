@@ -43,7 +43,7 @@ const Login = () => {
         {/* Left image */}
         <div className="w-1/2 hidden md:block">
           <img
-            src="/glasses.png"
+            src="assets/glasses.jpg"
             alt="Eyewear"
             className="object-cover h-full w-full"
           />
