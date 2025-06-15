@@ -103,8 +103,8 @@ React Toastify
 ## 📥 Installation
 
 ```base
-git clone https://github.com/your-username/optical-ecommerce.git
-cd optical-ecommerce
+git clone https://github.com/rubankumarsankar/optical-e-comm.git
+cd optical-e-comm
 npm install
 npm run dev
 
