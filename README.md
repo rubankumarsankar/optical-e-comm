@@ -1,81 +1,120 @@
-# Optical E-Commerce Platform (React + Tailwind CSS)
+# 🕶️ Optical E-Commerce Frontend
 
-This is a fully functional Optical E-Commerce Frontend built with **React.js**, **Tailwind CSS**, **React Router**, and **localStorage** for persistence. It includes both customer-facing pages and a secure admin panel for managing products, orders, and customers.
+A modern, responsive optical e-commerce web app built using **React.js**, **Tailwind CSS**, and **Framer Motion**, supporting:
 
-## 🔧 Tech Stack
+- ✅ Dynamic product listing (Eyeglasses, Sunglasses, Contact Lenses)
+- 🛒 Cart & Wishlist (localStorage)
+- 🎯 Filter by brand, frame type, rating
+- 📱 Mobile-first responsive UI
+- 💫 Smooth animations (Framer Motion)
+- 🔥 Bestsellers & Discounts
+- 💡 Modular scalable folder structure
 
-- React.js (Vite)
-- Tailwind CSS
-- React Router DOM
-- Redux (optional for state management)
-- React Icons
-- Framer Motion (for animations)
-- LocalStorage (for authentication, cart, etc.)
+---
 
 ## 📁 Project Structure
 
+```dash 
+
+/src
+│
+├── assets/ # Images used in UI
+├── components/ # Reusable UI components
+│ ├── ProductCard.jsx
+│ ├── FilterSidebar.jsx
+│ └── ...
+│
+├── data/
+│ └── products.js # All product data (id, title, price, image, etc.)
+│
+├── pages/
+│ ├── CategoryPage.jsx
+│ ├── ProductDetail.jsx
+│ └── ...
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+
+
+
+```
 
 
 ## 🚀 Features
 
-### 👓 User Features
+### ✅ Product Listing
+- Lists all products under `/category` 
+- Filters by:
+  - Frame type
+  - Brand
+  - Rating
 
-- Landing Page with Categories & Offers
-- Product Listing & Filtering (Brand, Type, Price)
-- Product Detail Page
-- Add to Cart and Wishlist
-- Checkout Page (dummy)
-- Order Tracking
-- Authentication: Login/Register
-- LocalStorage cart & user state
+### 💎 Product Details
+- Dynamic route: `/product/:id`
+- Shows product info, pricing, gallery
+- Buttons: Add to Cart, Wishlist, Buy Now
 
-### 🛠️ Admin Panel
+### 🛒 Cart
+- Stored in `localStorage` under `optic_cart`
+- Accessed from anywhere
 
-- Admin Login (`/admin`)
-- Dashboard Overview
-- Product Management
-- Order List & Details
-- Customer List with Add/Edit/View (Modal)
-- Settings Page
-- Logout Functionality
+### ❤️ Wishlist
+- Stored in `localStorage` under `optic_wishlist`
+- Add/remove via heart icon
 
-## 🛡️ Admin Access Flow
+---
 
-1. Go to `/admin` – Admin Login page will appear.
-2. On successful login, you're redirected to `/admin/dashboard`.
-3. You can navigate to:
-   - `/admin/products`
-   - `/admin/orders`
-   - `/admin/customers`
-   - `/admin/settings`
+## 📦 Data Structure (`products.js`)
 
-## 🔐 Authentication
+Each product contains:
 
-- Admin login data is stored in `localStorage` as `authToken`.
-- Upon logout, `authToken` and `user` are cleared.
+```js
+{
+  id: 1,
+  brand: "Ray-Ban",
+  title: "Classic Round Metal Frame",
+  price: 2999,
+  originalPrice: 3999,
+  frameType: "Round",
+  category: "Eyeglasses",
+  rating: 128,
+  quantity: 45,
+  image: "/assets/bestsellers/eyeglasses1.jpg",
+  images: [ ... ],
+  tag: "Best Seller",
+  discount: "25%",
+}
+```
 
-## 📦 Setup Instructions
+## 💻 Technologies Used
+React.js
 
-1. **Clone the repo:**
-   ```bash
-   git clone https://github.com/your-username/optical-ecommerce-frontend.git
-   cd optical-ecommerce-frontend
-   ```
+Tailwind CSS
 
-2. **Install dependencies:**
+Framer Motion
 
-```dash
+React Icons
+
+React Router DOM
+
+React Toastify
+
+## 📥 Installation
+
+```base
+git clone https://github.com/your-username/optical-ecommerce.git
+cd optical-ecommerce
 npm install
-```
-
-3. **Run the project:**
-
-```dash
 npm run dev
-```
-4. **Visit in Browser:**
-
-```dash
-http://localhost:5173/
 
 ```
+
+## Notes
+
+Data is hardcoded in products.js. You can later replace it with API calls.
+
+Cart/Wishlist uses localStorage (optic_cart and optic_wishlist)
+
+Designed with mobile-first responsiveness
+
