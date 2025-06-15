@@ -65,7 +65,7 @@ export default function Navbar() {
       <ToastContainer position="top-right" />
       <nav className="w-full bg-white shadow-md fixed z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-          <a href="/" className="text-blue-600 font-bold text-xl">OpticVision</a>
+          <a href="/" className="text-primary font-bold text-xl">VisionOptic</a>
 
           <input
             type="text"
@@ -73,7 +73,7 @@ export default function Navbar() {
             className="hidden md:block w-96 px-4 py-2 border rounded-full shadow-sm text-sm"
           />
 
-          <div className="flex gap-6 items-center text-sm text-gray-700">
+          <div className="flex gap-6 items-center text-sm text-secondary">
             <div className="hidden md:flex gap-6">
               <a href="/category/eyeglasses">Eyeglasses</a>
               <a href="/category/sunglasses">Sunglasses</a>
@@ -96,13 +96,13 @@ export default function Navbar() {
                       <>
                         <a
                           href="/signin"
-                          className="block px-4 py-2 hover:bg-gray-100 text-sm"
+                          className="block px-4 py-2 hover:bg-secondary/40 text-sm"
                         >
                           Sign In
                         </a>
                         <a
                           href="/signup"
-                          className="block px-4 py-2 hover:bg-gray-100 text-sm"
+                          className="block px-4 py-2 hover:bg-secondary/40 text-sm"
                         >
                           Register
                         </a>
@@ -111,14 +111,14 @@ export default function Navbar() {
                       <>
                         <a
                           href="/my-orders"
-                          className="block px-4 py-2 hover:bg-gray-100 text-sm"
+                          className="block px-4 py-2 hover:bg-secondary/40 text-sm"
                         >
                           My Orders
                         </a>
                         <a
                           href="#"
                           onClick={handleLogout}
-                          className="block px-4 py-2 hover:bg-gray-100 text-sm text-red-500"
+                          className="block px-4 py-2 hover:bg-secondary/40 text-sm text-red-500"
                         >
                           Logout
                         </a>
@@ -137,11 +137,11 @@ export default function Navbar() {
               {/* Cart */}
               <div className="relative">
                 <FaShoppingCart
-                  className="cursor-pointer hover:text-blue-600 transition"
+                  className="cursor-pointer hover:text-primary transition"
                   onClick={() => navigate('/cart')}
                 />
                 {cartCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-blue-500 text-white rounded-full px-1.5 text-xs">
+                  <span className="absolute -top-2 -right-2 bg-primary text-white rounded-full px-1.5 text-xs">
                     {cartCount}
                   </span>
                 )}

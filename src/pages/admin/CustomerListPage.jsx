@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import sampleCustomers from "../data/customers";
+import sampleCustomers from "../../data/customers";
 import { FaEdit, FaEye, FaTrash } from "react-icons/fa";
 import { toast } from "react-toastify";
 
@@ -70,7 +70,7 @@ export default function CustomerListPage() {
         <h2 className="text-xl font-bold">Customer List</h2>
         <button
           onClick={() => openModal("add", { name: "", email: "", phone: "", address: "", zip: "" })}
-          className="bg-blue-600 text-white px-4 py-2 rounded"
+          className="bg-primary text-white px-4 py-2 rounded"
         >
           + Add Customer
         </button>
@@ -79,7 +79,7 @@ export default function CustomerListPage() {
       <div className="overflow-x-auto">
         <table className="min-w-full border rounded">
           <thead>
-            <tr className="bg-gray-100 text-sm font-semibold text-gray-700">
+            <tr className="bg-secondary/20 text-sm font-semibold text-secondary">
               <th className="py-2 px-4 border">Name</th>
               <th className="py-2 px-4 border">Email</th>
               <th className="py-2 px-4 border">Phone</th>
@@ -96,7 +96,7 @@ export default function CustomerListPage() {
                 <td className="px-4 py-2 border">{customer.address}</td>
                 <td className="px-4 py-2 border flex gap-3">
                   <FaEye
-                    className="text-blue-600 hover:text-blue-800 cursor-pointer"
+                    className="text-primary hover:text-primary cursor-pointer"
                     onClick={() => openModal("view", customer)}
                   />
                   <FaEdit
@@ -119,7 +119,7 @@ export default function CustomerListPage() {
         <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-md relative">
             <button
-              className="absolute top-2 right-2 text-gray-500 hover:text-black"
+              className="absolute top-2 right-2 text-secondary hover:text-black"
               onClick={closeModal}
             >
               ✕
@@ -193,7 +193,7 @@ export default function CustomerListPage() {
                   </button>
                   <button
                     type="submit"
-                    className="bg-blue-600 text-white px-4 py-2 rounded"
+                    className="bg-primary text-white px-4 py-2 rounded"
                   >
                     {modalType === "edit" ? "Update" : "Add"}
                   </button>

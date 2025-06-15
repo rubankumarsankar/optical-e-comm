@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { FaEye, FaEdit, FaTrash } from "react-icons/fa";
-import AddProductModal from "../components/AddProductModal";
+import AddProductModal from "@/components/admin/AddProductModal";
 import ViewProductModal from "./ViewProductModal";
 import { toast } from "react-toastify";
-import defaultProducts from "../data/products"; // Your hardcoded base products
+import defaultProducts from "@/data/products"; // Your hardcoded base products
 
 export default function ProductPage() {
   const [showAddModal, setShowAddModal] = useState(false);
@@ -51,13 +51,13 @@ export default function ProductPage() {
   return (
     <div className="bg-white p-6 rounded-xl shadow">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold text-gray-800">Product Management</h2>
+        <h2 className="text-xl font-bold text-secondary">Product Management</h2>
         <button
           onClick={() => {
             setEditingProduct(null);
             setShowAddModal(true);
           }}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          className="bg-primary text-white px-4 py-2 rounded hover:bg-primary"
         >
           + Add Product
         </button>
@@ -66,7 +66,7 @@ export default function ProductPage() {
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border rounded-xl">
           <thead>
-            <tr className="bg-gray-100 text-left text-sm font-semibold text-gray-700">
+            <tr className="bg-secondary/20 text-left text-sm font-semibold text-secondary">
               <th className="py-2 px-4 border">Image</th>
               <th className="py-2 px-4 border">Title</th>
               <th className="py-2 px-4 border">Brand</th>
@@ -86,7 +86,7 @@ export default function ProductPage() {
                 <td className="py-2 px-4 border">₹{product.price.toFixed(2)}</td>
                 <td className="py-2 px-4 border">{product.quantity}</td>
                 <td className="py-2 px-4 border">
-                  <div className="flex gap-3 text-gray-600">
+                  <div className="flex gap-3 text-secondary">
                     <button
                       title="View"
                       onClick={() => {
@@ -94,7 +94,7 @@ export default function ProductPage() {
                         setShowViewModal(true);
                       }}
                     >
-                      <FaEye className="hover:text-blue-500" />
+                      <FaEye className="hover:text-primary" />
                     </button>
                     <button
                       title="Edit"
@@ -119,7 +119,7 @@ export default function ProductPage() {
         </table>
 
         {productList.length === 0 && (
-          <p className="text-center text-gray-500 py-4">No products available.</p>
+          <p className="text-center text-secondary py-4">No products available.</p>
         )}
       </div>
 

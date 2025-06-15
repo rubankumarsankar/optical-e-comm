@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import sampleOrders from "../data/orders";
+import sampleOrders from "../../data/orders";
 import { FaEye } from "react-icons/fa";
 import { toast } from "react-toastify";
 
@@ -7,10 +7,10 @@ import { toast } from "react-toastify";
 const getStatusColor = (status) => {
   switch (status) {
     case "Pending": return "bg-yellow-100 text-yellow-700";
-    case "Shipped": return "bg-blue-100 text-blue-700";
+    case "Shipped": return "bg-primary text-primary";
     case "Delivered": return "bg-green-100 text-green-700";
     case "Cancelled": return "bg-red-100 text-red-700";
-    default: return "bg-gray-100 text-gray-700";
+    default: return "bg-secondary/20 text-secondary";
   }
 };
 
@@ -45,14 +45,14 @@ export default function OrderListPage() {
   return (
     <div className="p-6 bg-white shadow rounded-xl">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold text-gray-800">Order List</h2>
-        <p className="text-sm text-gray-500">Showing {orders.length} orders</p>
+        <h2 className="text-xl font-bold text-secondary">Order List</h2>
+        <p className="text-sm text-secondary">Showing {orders.length} orders</p>
       </div>
 
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border rounded-xl">
           <thead>
-            <tr className="bg-gray-100 text-sm font-semibold text-gray-700">
+            <tr className="bg-secondary/20 text-sm font-semibold text-secondary">
               <th className="py-2 px-4 border">Order ID</th>
               <th className="py-2 px-4 border">Name</th>
               <th className="py-2 px-4 border">Email</th>
@@ -67,7 +67,7 @@ export default function OrderListPage() {
             {orders.map((order) => (
               <tr
                 key={order.id}
-                className="border-b hover:bg-gray-50 text-sm text-gray-700"
+                className="border-b hover:bg-gray-50 text-sm text-secondary"
               >
                 <td className="py-2 px-4 border font-medium">{order.id}</td>
                 <td className="py-2 px-4 border">{order.customer.name}</td>
@@ -88,7 +88,7 @@ export default function OrderListPage() {
                 </td>
                 <td className="py-2 px-4 border">
                   <button
-                    className="text-blue-600 hover:text-blue-800"
+                    className="text-primary hover:text-primary"
                     onClick={() => setSelectedOrder(order)}
                     title="View Order Details"
                   >
@@ -101,7 +101,7 @@ export default function OrderListPage() {
         </table>
 
         {orders.length === 0 && (
-          <p className="text-center py-6 text-gray-500">No orders found.</p>
+          <p className="text-center py-6 text-secondary">No orders found.</p>
         )}
       </div>
 
@@ -109,10 +109,10 @@ export default function OrderListPage() {
       {selectedOrder && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white w-full max-w-lg rounded-xl shadow-lg p-6 relative">
-            <h3 className="text-lg font-bold mb-4 text-gray-800">
+            <h3 className="text-lg font-bold mb-4 text-secondary">
               Order #{selectedOrder.id} Details
             </h3>
-            <div className="text-sm text-gray-700 space-y-2">
+            <div className="text-sm text-secondary space-y-2">
               <p><strong>Name:</strong> {selectedOrder.customer.name}</p>
               <p><strong>Email:</strong> {selectedOrder.customer.email}</p>
               <p><strong>Phone:</strong> {selectedOrder.customer.phone}</p>
@@ -142,7 +142,7 @@ export default function OrderListPage() {
             </div>
 
             <button
-              className="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-lg"
+              className="absolute top-2 right-3 text-secondary hover:text-red-600 text-lg"
               onClick={closeModal}
             >
               ✕

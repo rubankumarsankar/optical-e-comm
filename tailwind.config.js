@@ -14,10 +14,10 @@ export default {
         display: ['Playfair Display', 'serif'],
       },
       colors: {
-        primary: '#0056D2',    // Blue for buttons & highlights
-        secondary: '#1F2937',  // Grey for text/headings
-        accent: '#F9FAFB',     // Light background
-        dark: '#111827',       // Darker text/backgrounds
+        primary: '#d69e2d',    
+        secondary: '#1F2937',  
+        accent: '#F9FAFB',     
+        dark: '#111827',       
         white: '#FFFFFF',
       },
       

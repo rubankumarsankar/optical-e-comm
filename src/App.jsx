@@ -14,21 +14,22 @@ import CheckoutPage from "./pages/CheckoutPage";
 import MyOrdersPage from "./pages/MyOrdersPage";
 
 import AdminPage from "./pages/AdminPage";
-import Dashboard from "./components/Dashboard";
-import ProductPage from "./pages/ProductPage";
-import OrderListPage from "./pages/OrderListPage";
-import CustomerListPage from "./pages/CustomerListPage";
-import AdminSettingsPage from "./pages/AdminSettingsPage";
+import Dashboard from "./components/admin/Dashboard";
+import ProductPage from "./pages/admin/ProductPage";
+import OrderListPage from "./pages/admin/OrderListPage";
+import CustomerListPage from "./pages/admin/CustomerListPage";
+import AdminSettingsPage from "./pages/admin/AdminSettingsPage";
 
 
 import { Toaster } from "react-hot-toast";
-import AdminLogin from "./components/AdminLogin";
+import AdminLogin from "./components/admin/AdminLogin";
 
 function App() {
   return (
     <Router>
       <Toaster position="top-right" />
       <Routes>
+        
 
         {/* -------------------- User Layout -------------------- */}
         <Route element={<MainLayout />}>

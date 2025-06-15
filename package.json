@@ -1,5 +1,5 @@
 {
-  "name": "opticvision-frontend",
+  "name": "VisionOptic-frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,6 +13,8 @@
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.18.1",
+    "lucide-react": "^0.515.0",
+    "path": "^0.12.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hot-toast": "^2.5.2",

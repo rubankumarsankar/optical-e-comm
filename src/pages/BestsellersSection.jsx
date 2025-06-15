@@ -47,7 +47,7 @@ export default function BestsellersSection() {
         {/* Heading */}
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-2">Our Bestsellers</h2>
-          <p className="text-gray-600">Discover our most popular frames and lenses loved by customers worldwide</p>
+          <p className="text-secondary">Discover our most popular frames and lenses loved by customers worldwide</p>
         </div>
 
         {/* Products Grid */}
@@ -69,18 +69,18 @@ export default function BestsellersSection() {
                 />
               </div>
               <div className="p-4 flex flex-col gap-1">
-                <p className="text-sm text-gray-500">{item.brand}</p>
+                <p className="text-sm text-secondary">{item.brand}</p>
                 <h3 className="text-base font-semibold">{item.name}</h3>
                 <div className="flex items-center gap-2 mt-1">
-                  <span className="text-blue-600 font-semibold">₹{item.price.toFixed(2)}</span>
+                  <span className="text-primary font-semibold">₹{item.price.toFixed(2)}</span>
                   {item.originalPrice && (
-                    <span className="line-through text-sm text-gray-400">
+                    <span className="line-through text-sm text-secondary">
                       ₹{item.originalPrice.toFixed(2)}
                     </span>
                   )}
                 </div>
                 <div className="mt-3">
-                  <button className="ml-auto border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded p-2 transition-colors">
+                  <button className="ml-auto border border-primary text-primary hover:bg-primary hover:text-white rounded p-2 transition-colors">
                     <FaShoppingCart />
                   </button>
                 </div>
@@ -93,7 +93,7 @@ export default function BestsellersSection() {
         <div className="text-center mt-10">
           <a
             href="/category"
-            className="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+            className="inline-block bg-primary text-white px-6 py-2 rounded hover:bg-primary transition"
           >
             View All Bestsellers
           </a>

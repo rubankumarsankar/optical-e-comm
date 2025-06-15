@@ -11,7 +11,7 @@ export default function ViewProductModal({ product, onClose }) {
         animate={{ scale: 1, opacity: 1 }}
         className="bg-white p-6 rounded-lg w-full max-w-md shadow"
       >
-        <h2 className="text-xl font-semibold mb-4 text-gray-700">Product Details</h2>
+        <h2 className="text-xl font-semibold mb-4 text-secondary">Product Details</h2>
         <div className="space-y-3">
           <img src={product.image} alt={product.title} className="w-32 h-32 object-cover rounded" />
           <p><strong>Title:</strong> {product.title}</p>
@@ -21,7 +21,7 @@ export default function ViewProductModal({ product, onClose }) {
         </div>
 
         <div className="mt-6 text-right">
-          <button onClick={onClose} className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">
+          <button onClick={onClose} className="px-4 py-2 bg-secondary/20 rounded hover:bg-secondary/50">
             Close
           </button>
         </div>

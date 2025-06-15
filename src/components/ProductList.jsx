@@ -10,10 +10,10 @@ export default function ProductList() {
     <div className="p-6">
       {/* Header with Add Product Button */}
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Product List</h1>
+        <h1 className="text-2xl font-bold text-secondary">Product List</h1>
         <button
           onClick={() => setIsModalOpen(true)}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow"
+          className="bg-primary hover:bg-primary text-white px-4 py-2 rounded shadow"
         >
           + Add Product
         </button>

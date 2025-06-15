@@ -37,30 +37,30 @@ const TopHeader = () => {
       <input
         type="text"
         placeholder="Search..."
-        className="border border-gray-300 rounded-md px-4 py-2 w-full max-w-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="border border-secondary rounded-md px-4 py-2 w-full max-w-md text-sm focus:outline-none focus:ring-2 focus:ring-primary"
       />
 
       {/* Right Side: Notification and Profile */}
       <div className="flex items-center gap-6 relative" ref={dropdownRef}>
-        <FiBell className="text-gray-600 hover:text-blue-600 cursor-pointer" size={20} />
+        <FiBell className="text-secondary hover:text-primary cursor-pointer" size={20} />
 
         {/* Profile button with avatar icon */}
         <button
           onClick={() => setDropdownOpen(!dropdownOpen)}
-          className="flex items-center gap-2 hover:text-blue-600 text-sm"
+          className="flex items-center gap-2 hover:text-primary text-sm"
         >
           {/* Avatar icon circle */}
-          <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-gray-200">
-            <FiUser className="text-gray-600" size={20} />
+          <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-secondary/20">
+            <FiUser className="text-secondary" size={20} />
           </span>
 
           {/* Name & role */}
           <div className="text-left hidden sm:block">
-            <p className="font-medium text-gray-800"></p>
-            <p className="text-xs text-gray-500">Admin</p>
+            <p className="font-medium text-secondary"></p>
+            <p className="text-xs text-secondary">Admin</p>
           </div>
 
-          <FiChevronDown className="text-gray-600" />
+          <FiChevronDown className="text-secondary" />
         </button>
 
         {/* Dropdown Menu */}

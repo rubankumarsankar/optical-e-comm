@@ -54,7 +54,7 @@ const Register = () => {
 
   return (
     <motion.div
-      className="flex items-center justify-center min-h-screen bg-gray-100 px-4"
+      className="flex items-center justify-center min-h-screen bg-secondar/20y px-4"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
@@ -72,7 +72,7 @@ const Register = () => {
         {/* Right form */}
         <div className="w-full md:w-1/2 p-8">
           <h2 className="text-2xl font-bold mb-2">Create Account</h2>
-          <p className="text-gray-500 text-sm mb-4">
+          <p className="text-secondary text-sm mb-4">
             Join us to explore our premium eyewear collection
           </p>
 
@@ -142,11 +142,11 @@ const Register = () => {
               />
               <label className="text-sm">
                 I agree to the{" "}
-                <a href="#" className="text-blue-500 underline">
+                <a href="#" className="text-primary underline">
                   Terms of Service
                 </a>{" "}
                 and{" "}
-                <a href="#" className="text-blue-500 underline">
+                <a href="#" className="text-primary underline">
                   Privacy Policy
                 </a>
               </label>
@@ -155,14 +155,14 @@ const Register = () => {
 
             <button
               type="submit"
-              className="bg-blue-600 text-white w-full py-2 rounded-md hover:bg-blue-700"
+              className="bg-primary text-white w-full py-2 rounded-md hover:bg-primary"
             >
               Create Account
             </button>
 
             <p className="text-sm mt-3 text-center">
               Already have an account?{" "}
-              <a href="/signin" className="text-blue-600 font-semibold">
+              <a href="/signin" className="text-primary font-semibold">
                 Sign in
               </a>
             </p>

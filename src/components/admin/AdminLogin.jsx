@@ -23,15 +23,15 @@ const AdminLoginPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
+    <div className="flex items-center justify-center min-h-screen bg-secondary/20 px-4">
       <div className="bg-white shadow-md rounded-lg w-full max-w-md p-8">
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Admin Login</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center text-secondary">Admin Login</h2>
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Email</label>
+            <label className="block text-sm font-medium text-secondary">Email</label>
             <input
               type="email"
-              className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-500"
+              className="mt-1 block w-full border border-secondary rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-primary"
               placeholder="admin@admin.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -39,10 +39,10 @@ const AdminLoginPage = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Password</label>
+            <label className="block text-sm font-medium text-secondary">Password</label>
             <input
               type="password"
-              className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-500"
+              className="mt-1 block w-full border border-secondary rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-primary"
               placeholder="admin123"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -51,7 +51,7 @@ const AdminLoginPage = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+            className="w-full bg-primary text-white py-2 rounded-md hover:bg-primary transition"
           >
             Login
           </button>

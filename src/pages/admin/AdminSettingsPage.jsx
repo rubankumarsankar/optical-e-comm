@@ -31,12 +31,12 @@ export default function AdminSettingsPage() {
 
   return (
     <div className="p-6 max-w-3xl mx-auto bg-white rounded-xl shadow">
-      <h2 className="text-xl font-bold mb-4 text-gray-800">Admin Settings</h2>
+      <h2 className="text-xl font-bold mb-4 text-secondary">Admin Settings</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Name */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+          <label className="block text-sm font-medium text-secondary mb-1">Name</label>
           <input
             type="text"
             name="name"
@@ -49,7 +49,7 @@ export default function AdminSettingsPage() {
 
         {/* Email */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+          <label className="block text-sm font-medium text-secondary mb-1">Email</label>
           <input
             type="email"
             name="email"
@@ -62,7 +62,7 @@ export default function AdminSettingsPage() {
 
         {/* Password */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+          <label className="block text-sm font-medium text-secondary mb-1">Password</label>
           <input
             type="password"
             name="password"
@@ -75,7 +75,7 @@ export default function AdminSettingsPage() {
 
         {/* Theme */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Theme</label>
+          <label className="block text-sm font-medium text-secondary mb-1">Theme</label>
           <select
             name="theme"
             value={admin.theme}
@@ -94,16 +94,16 @@ export default function AdminSettingsPage() {
             name="notifications"
             checked={admin.notifications}
             onChange={handleChange}
-            className="h-4 w-4 text-blue-600"
+            className="h-4 w-4 text-primary"
           />
-          <label className="text-sm text-gray-700">Enable Notifications</label>
+          <label className="text-sm text-secondary">Enable Notifications</label>
         </div>
 
         {/* Submit */}
         <div className="flex justify-end">
           <button
             type="submit"
-            className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+            className="bg-primary text-white px-6 py-2 rounded hover:bg-primary"
           >
             Save Settings
           </button>

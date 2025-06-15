@@ -1,5 +1,4 @@
-import Dashboard from "../components/Dashboard";
-import ProductPage from "./ProductPage";
+import Dashboard from "@/components/admin/Dashboard";
 
 const AdminPage = () => {
     return (

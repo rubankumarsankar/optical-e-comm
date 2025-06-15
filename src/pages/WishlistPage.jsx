@@ -15,11 +15,11 @@ export default function WishlistPage() {
   };
 
   return (
-    <div className="p-6 min-h-screen bg-gray-100">
+    <div className="p-6  bg-secondary/20">
       <h2 className="text-2xl font-bold mb-6 text-center">Your Wishlist</h2>
 
       {wishlist.length === 0 ? (
-        <p className="text-gray-500 text-center">Your wishlist is empty.</p>
+        <p className="text-secondary text-center">Your wishlist is empty.</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {wishlist.map((item) => (
@@ -35,7 +35,7 @@ export default function WishlistPage() {
               />
               <div className="p-4">
                 <h3 className="text-lg font-semibold truncate">{item.title}</h3>
-                <p className="text-blue-600 font-bold mt-2">₹{item.price}</p>
+                <p className="text-primary font-bold mt-2">₹{item.price}</p>
               </div>
             </div>
           ))}

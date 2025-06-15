@@ -34,7 +34,7 @@ const Login = () => {
 
   return (
     <motion.div
-      className="min-h-screen flex items-center justify-center bg-gray-100 px-4"
+      className="min-h-screen flex items-center justify-center bg-secondary/20 px-4"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
@@ -72,14 +72,14 @@ const Login = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700"
+              className="w-full bg-primary text-white py-2 rounded-md hover:bg-primary"
             >
               Login
             </button>
 
             <p className="text-sm text-center">
               Don’t have an account?{" "}
-              <a href="/signup" className="text-blue-600 font-semibold">
+              <a href="/signup" className="text-primary font-semibold">
                 Register
               </a>
             </p>

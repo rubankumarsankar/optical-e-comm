@@ -59,8 +59,8 @@ export default function CategoryPage() {
       <aside className="w-full lg:w-1/4">
        
         <div className="mt-6">
-          <h3 className="text-sm text-gray-600 font-semibold mb-2">Categories</h3>
-          <div className="flex flex-col gap-2 text-blue-600 text-sm">
+          <h3 className="text-sm text-secondary font-semibold mb-2">Categories</h3>
+          <div className="flex flex-col gap-2 text-primary text-sm">
             <Link to="/category/eyeglasses">Eyeglasses</Link>
             <Link to="/category/sunglasses">Sunglasses</Link>
             <Link to="/category/lenses">Lenses</Link>
@@ -73,15 +73,15 @@ export default function CategoryPage() {
       {/* Main Content */}
       <main className="w-full lg:w-3/4">
         <div className="mb-4 flex justify-between items-center flex-wrap gap-2">
-          <h2 className="text-2xl font-bold text-gray-800">{categoryTitle}</h2>
-          <p className="text-sm text-gray-600">
+          <h2 className="text-2xl font-bold text-secondary">{categoryTitle}</h2>
+          <p className="text-sm text-secondary">
             Showing {finalFilteredProducts.length} of{" "}
             {categoryFilteredProducts.length} products
           </p>
         </div>
 
         {finalFilteredProducts.length === 0 ? (
-          <div className="text-center mt-20 text-gray-500 text-lg">
+          <div className="text-center mt-20 text-secondary text-lg">
             😢 No products match your filters.
           </div>
         ) : (

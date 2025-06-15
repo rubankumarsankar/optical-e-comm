@@ -35,13 +35,13 @@ export default function CategorySection() {
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-10">
-          <p className="text-sm text-blue-600 uppercase tracking-wide font-medium">
+          <p className="text-sm text-primary uppercase tracking-wide font-medium">
             Browse our collection
           </p>
           <h2 className="text-3xl md:text-4xl font-bold mt-2">
             Shop By Category
           </h2>
-          <div className="h-1 w-20 bg-blue-500 mx-auto mt-3 rounded-full" />
+          <div className="h-1 w-20 bg-primary mx-auto mt-3 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -64,10 +64,10 @@ export default function CategorySection() {
               </div>
               <div className="p-5">
                 <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
-                <p className="text-sm text-gray-600 mb-4">{item.description}</p>
+                <p className="text-sm text-secondary mb-4">{item.description}</p>
                 <a
                   href={item.link}
-                  className="text-blue-600 font-medium hover:underline flex items-center gap-1"
+                  className="text-primary font-medium hover:underline flex items-center gap-1"
                 >
                   Explore <span>→</span>
                 </a>

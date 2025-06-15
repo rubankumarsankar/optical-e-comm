@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
-import TopHeader from "../components/TopHeader";
+import Sidebar from "@/components/admin/Sidebar";
+import TopHeader from "@/components/admin/TopHeader";
 
 const AdminLayout = () => {
   return (
-    <div className="min-h-screen flex bg-gray-100">
+    <div className="min-h-screen flex bg-secondary/20">
       {/* Sidebar */}
       <Sidebar />
 

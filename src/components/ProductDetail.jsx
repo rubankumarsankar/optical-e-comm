@@ -24,7 +24,7 @@ const ProductDetail = () => {
 
   if (!product)
     return (
-      <div className="text-center py-20 text-gray-600">Loading...</div>
+      <div className="text-center py-20 text-secondary">Loading...</div>
     );
 
   const addToCart = () => {
@@ -96,7 +96,7 @@ const ProductDetail = () => {
                   src={img}
                   onClick={() => setSelectedImage(img)}
                   className={`w-20 h-20 border rounded-md object-cover cursor-pointer hover:scale-105 transition ${
-                    selectedImage === img ? "ring-2 ring-blue-500" : ""
+                    selectedImage === img ? "ring-2 ring-primary" : ""
                   }`}
                   alt={`Thumb ${i}`}
                 />
@@ -107,15 +107,15 @@ const ProductDetail = () => {
         {/* Info Section */}
         <div className="flex-1 space-y-4">
           <h1 className="text-3xl font-semibold">{product.title}</h1>
-          <p className="text-sm text-blue-600 font-medium">{product.brand}</p>
+          <p className="text-sm text-primary font-medium">{product.brand}</p>
           <div className="text-yellow-500 font-medium">
             ⭐ {product.rating} reviews
           </div>
           <div className="flex items-center gap-2">
-            <div className="text-2xl font-bold text-gray-800">
+            <div className="text-2xl font-bold text-secondary">
               ₹{product.price.toFixed(2)}
             </div>
-            <p className="text-gray-500 line-through">
+            <p className="text-secondary line-through">
               ₹{product.originalPrice.toFixed(2)}
             </p>
           </div>
@@ -123,13 +123,13 @@ const ProductDetail = () => {
           <div className="flex flex-wrap items-center gap-4 mt-4">
             <button
               onClick={addToCart}
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+              className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary"
             >
               Add to Cart
             </button>
             <button
               onClick={buyNow}
-              className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800"
+              className="px-4 py-2 bg-black text-white rounded-md hover:bg-secondary"
             >
               Buy Now
             </button>
@@ -145,7 +145,7 @@ const ProductDetail = () => {
             <p className="text-green-600">
               In Stock ({product.quantity} available)
             </p>
-            <p className="text-gray-700">
+            <p className="text-secondary">
               Free shipping & 2-year warranty included
             </p>
           </div>
@@ -162,8 +162,8 @@ const ProductDetail = () => {
               className={classNames(
                 "pb-2 text-sm font-medium",
                 activeTab === tab
-                  ? "border-b-2 border-blue-600 text-blue-600"
-                  : "text-gray-600 hover:text-blue-500"
+                  ? "border-b-2 border-primary text-primary"
+                  : "text-secondary hover:text-primary"
               )}
             >
               {tab}
@@ -173,13 +173,13 @@ const ProductDetail = () => {
 
         <div className="mt-6">
           {activeTab === "Description" && (
-            <p className="text-gray-700 text-sm leading-relaxed">
+            <p className="text-secondary text-sm leading-relaxed">
               {product.description}
             </p>
           )}
 
           {activeTab === "Specifications" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-700">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-secondary">
               <div>
                 <h4 className="font-semibold mb-2">Frame Details</h4>
                 <ul className="space-y-1">
@@ -217,13 +217,13 @@ const ProductDetail = () => {
               {product.reviews?.length ? (
                 product.reviews.map((review, index) => (
                   <div key={index} className="border-b pb-3">
-                    <p className="font-medium text-gray-800">{review.user}</p>
+                    <p className="font-medium text-secondary">{review.user}</p>
                     <p className="text-yellow-500">⭐ {review.rating}</p>
-                    <p className="text-gray-600 text-sm">{review.comment}</p>
+                    <p className="text-secondary text-sm">{review.comment}</p>
                   </div>
                 ))
               ) : (
-                <p className="text-gray-500 text-sm">No reviews yet.</p>
+                <p className="text-secondary text-sm">No reviews yet.</p>
               )}
             </div>
           )}
@@ -259,8 +259,8 @@ const ProductDetail = () => {
                   className="w-full h-40 object-cover rounded-md"
                 />
                 <h3 className="text-sm font-medium mt-2">{suggestion.title}</h3>
-                <p className="text-blue-600 text-sm">{suggestion.brand}</p>
-                <p className="text-gray-800 font-semibold">
+                <p className="text-primary text-sm">{suggestion.brand}</p>
+                <p className="text-secondary font-semibold">
                   ₹{suggestion.price.toFixed(2)}
                 </p>
               </Link>

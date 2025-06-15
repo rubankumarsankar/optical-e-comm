@@ -17,7 +17,7 @@ export default function CustomerViewPage() {
   return (
     <div className="p-6 max-w-xl bg-white rounded-xl shadow mx-auto">
       <h2 className="text-xl font-bold mb-4">Customer Details</h2>
-      <div className="space-y-2 text-gray-700">
+      <div className="space-y-2 text-secondary">
         <p><strong>Name:</strong> {customer.name}</p>
         <p><strong>Email:</strong> {customer.email}</p>
         <p><strong>Phone:</strong> {customer.phone}</p>
@@ -27,7 +27,7 @@ export default function CustomerViewPage() {
       </div>
       <button
         onClick={() => navigate("/admin/customers")}
-        className="mt-6 text-blue-600 hover:underline"
+        className="mt-6 text-primary hover:underline"
       >
         ← Back to Customer List
       </button>

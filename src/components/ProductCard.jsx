@@ -61,14 +61,14 @@ export default function ProductCard({ product }) {
 
       <div className="p-4">
         <Link to={`/product/${product.id}`}>
-          <h2 className="font-semibold text-gray-800 truncate hover:underline">{product.title}</h2>
+          <h2 className="font-semibold text-secondary truncate hover:underline">{product.title}</h2>
         </Link>
-        <p className="text-sm text-gray-500">{product.brand}</p>
+        <p className="text-sm text-secondary">{product.brand}</p>
 
         <div className="flex items-center gap-2 mt-1">
-          <p className="text-lg font-bold text-blue-600">₹{product.price.toFixed(2)}</p>
+          <p className="text-lg font-bold text-primary">₹{product.price.toFixed(2)}</p>
           {product.originalPrice && product.originalPrice !== product.price && (
-            <p className="text-sm line-through text-gray-400">₹{product.originalPrice.toFixed(2)}</p>
+            <p className="text-sm line-through text-secondary">₹{product.originalPrice.toFixed(2)}</p>
           )}
         </div>
 
@@ -76,7 +76,7 @@ export default function ProductCard({ product }) {
           <motion.button
             onClick={addToCart}
             whileTap={{ scale: 0.9 }}
-            className="flex items-center gap-1 text-sm px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
+            className="flex items-center gap-1 text-sm px-3 py-1 bg-primary text-white rounded hover:bg-primary"
           >
             <FaShoppingCart />
             Add to Cart

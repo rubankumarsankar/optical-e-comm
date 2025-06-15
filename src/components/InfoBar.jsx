@@ -5,7 +5,7 @@ const infoItems = [
   {
     icon: <FaShippingFast size={28} />,
     title: "Free Shipping",
-    description: "On all orders over ₹99. International shipping available.",
+    description: "On all orders over ₹ 999. International shipping available.",
   },
   {
     icon: <FaHeadphones size={28} />,
@@ -37,11 +37,11 @@ export default function InfoBar() {
             viewport={{ once: true }}
             className="flex flex-col items-center"
           >
-            <div className="bg-blue-100 text-blue-600 p-4 rounded-full mb-3">
+            <div className="bg-primary text-accent p-4 rounded-full mb-3">
               {item.icon}
             </div>
             <h4 className="font-semibold text-md">{item.title}</h4>
-            <p className="text-gray-600 text-sm mt-1">{item.description}</p>
+            <p className="text-secondary text-sm mt-1">{item.description}</p>
           </motion.div>
         ))}
       </div>

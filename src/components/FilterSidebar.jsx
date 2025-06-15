@@ -11,9 +11,9 @@ export default function FilterSidebar({ filters, setFilters }) {
   return (
     <div className="bg-white p-6 rounded-lg shadow space-y-8">
       <div>
-        <h4 className="font-semibold text-gray-700 mb-3">Frame Type</h4>
+        <h4 className="font-semibold text-secondary mb-3">Frame Type</h4>
         {["Round", "Cat Eye", "Rectangle", "Aviator", "Oval", "Square"].map((type) => (
-          <label key={type} className="block text-sm text-gray-600 mb-2">
+          <label key={type} className="block text-sm text-secondary mb-2">
             <input
               type="checkbox"
               checked={filters.frameType.includes(type)}
@@ -26,9 +26,9 @@ export default function FilterSidebar({ filters, setFilters }) {
       </div>
 
       <div>
-        <h4 className="font-semibold text-gray-700 mb-3">Brands</h4>
+        <h4 className="font-semibold text-secondary mb-3">Brands</h4>
         {["Ray-Ban", "Prada", "Oakley", "Tom Ford", "Gucci", "Warby Parker"].map((brand) => (
-          <label key={brand} className="block text-sm text-gray-600 mb-2">
+          <label key={brand} className="block text-sm text-secondary mb-2">
             <input
               type="checkbox"
               checked={filters.brand.includes(brand)}
@@ -41,9 +41,9 @@ export default function FilterSidebar({ filters, setFilters }) {
       </div>
 
       <div>
-        <h4 className="font-semibold text-gray-700 mb-3">Rating</h4>
+        <h4 className="font-semibold text-secondary mb-3">Rating</h4>
         {[5, 4, 3, 2, 1].map((rate) => (
-          <label key={rate} className="block text-sm text-gray-600 mb-2">
+          <label key={rate} className="block text-sm text-secondary mb-2">
             <input
               type="checkbox"
               checked={filters.rating.includes(String(rate))}
